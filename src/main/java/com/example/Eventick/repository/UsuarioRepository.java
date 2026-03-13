@@ -1,4 +1,7 @@
 package com.example.Eventick.repository;
 
-public interface UsuarioRepository {
+import com.example.Eventick.model.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 }
