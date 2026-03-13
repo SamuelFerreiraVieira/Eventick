@@ -23,8 +23,14 @@ public class Ingresso {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
-    private String qrCodePath;
     private String codigoValidacao;
     private LocalDateTime dataInscricao;
     private boolean utilizado = false;
+
+
+    @Column(columnDefinition = "TEXT")
+    private String qrCodePath;
+
+
+
 }
