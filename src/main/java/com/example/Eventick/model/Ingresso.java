@@ -19,7 +19,7 @@ public class Ingresso {
     @JoinColumn(name = "evento_id")
     private Evento evento;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
