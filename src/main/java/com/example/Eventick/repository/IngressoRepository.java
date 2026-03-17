@@ -12,4 +12,6 @@ import java.util.Optional;
 public interface IngressoRepository extends JpaRepository<Ingresso, Long> {
     Optional<Ingresso> findByCodigoValidacao(String codigoValidacao);
     java.util.List<Ingresso> findByUsuario(Long usuarioid);
+    long countByEventoId(Long eventoId);
+    long countByEventoIdAndUtilizadoTrue(Long eventoId);
 }

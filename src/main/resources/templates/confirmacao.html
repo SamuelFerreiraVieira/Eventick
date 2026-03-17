@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sua Inscrição | Eventick</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6; /* Fundo cinza suave para destacar os cards */
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            padding: 40px 15px;
+        }
+        .main-container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* CARD SUPERIOR - O DEGRADÊ TOP */
+        .header-card {
+            background: linear-gradient(135deg, #00e5ff 0%, #00bcd4 50%, #0097a7 100%);
+            padding: 50px 30px;
+            text-align: center;
+            color: #ffffff;
+            border-radius: 24px 24px 0 0;
+            box-shadow: 0 10px 20px rgba(0, 188, 212, 0.2);
+        }
+        .eventick-logo {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            display: block;
+            opacity: 0.9;
+        }
+        .check-circle {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .header-card h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* CARD DO MEIO - QR CODE (ESTILO TICKET) */
+        .ticket-card {
+            background-color: #ffffff;
+            margin-top: -20px; /* Efeito de sobreposição */
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        .qr-label {
+            display: block;
+            color: #00bcd4;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .qr-wrapper {
+            background: #ffffff;
+            padding: 15px;
+            display: inline-block;
+            border-radius: 15px;
+            border: 2px solid #f0f7f9;
+        }
+        .qr-wrapper img {
+            display: block;
+        }
+
+        /* CARD INFERIOR - DETALHES */
+        .info-card {
+            background-color: #ffffff;
+            margin-top: 15px;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+        .info-row {
+            margin-bottom: 20px;
+        }
+        .info-row:last-child { margin-bottom: 0; }
+
+        .label {
+            display: block;
+            color: #90a4ae;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .value {
+            display: block;
+            color: #263238;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .event-highlight {
+            color: #00bcd4;
+            font-size: 18px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            color: #b0bec5;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="main-container">
+
+        <div class="header-card">
+            <span class="eventick-logo">Eventick</span>
+            <div class="check-circle">✓</div>
+            <h1>Inscrição Confirmada!</h1>
+            <p style="opacity: 0.8; font-size: 14px;">Seu ingresso já está disponível.</p>
+        </div>
+
+        <div class="ticket-card">
+            <span class="qr-label">Voucher de Entrada</span>
+            <div class="qr-wrapper">
+                <img src="cid:qrcodeImage" alt="QR Code" width="180" height="180"/>
+            </div>
+            <p style="margin-top: 15px; font-size: 12px; color: #78909c;">
+                Apresente este código na recepção do evento.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-row">
+                <span class="label">Participante</span>
+                <span class="value" th:text="${nomeUsuario}">Samuel Ferreira</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Evento</span>
+                <span class="value event-highlight" th:text="${nomeEvento}">Workshop Java Spring Boot</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Local de Acesso</span>
+                <span class="value">Portão 1 - Auditorio Central</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Desejamos um excelente evento!</p>
+            <p>&copy; 2026 Eventick Application</p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
