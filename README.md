@@ -34,6 +34,7 @@ cd eventick
 
 2. Variáveis de Ambiente
 Configure o seu application.properties ou application.yml com as credenciais do seu banco e servidor de e-mail:
+
 # Database
 spring.datasource.url=jdbc:postgresql://localhost:5432/eventick_db
 spring.datasource.username=${DB_USER}
